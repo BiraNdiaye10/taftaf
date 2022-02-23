@@ -3,7 +3,7 @@ import { Box } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
 import { APP_NAME, Routes } from '@taftaf/config';
 import { Footer, Header } from '@taftaf/components';
-import { useTranslator } from '@taftaf/hooks/use-translator';
+// import { useTranslator } from '@taftaf/hooks/use-translator';
 import { useRouter } from 'next/router';
 
 export type PageLayoutProps = {

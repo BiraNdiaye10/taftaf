@@ -1,8 +1,8 @@
-import { Routes } from '@taftaf/config';
-import { HomeLoginView, HomeView } from '@taftaf/views';
+// import { Routes } from '@taftaf/config';
+import { HomeView } from '@taftaf/views';
 import { NextPage } from 'next';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+// import { useRouter } from 'next/router';
+// import { useEffect } from 'react';
 import ScrollToTop from 'react-scroll-to-top';
 
 const HomePage: NextPage = (): JSX.Element => {
@@ -30,8 +30,6 @@ const HomePage: NextPage = (): JSX.Element => {
     );
 };
 
-
-
 // export const HomePage: NextPage = () => <HomeLoginView />;
 
- export default HomePage;
+export default HomePage;
