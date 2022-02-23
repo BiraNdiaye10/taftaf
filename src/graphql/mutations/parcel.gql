@@ -1,0 +1,81 @@
+mutation createParcel(
+    $name: String!
+    $origin: String!
+    $weight: Float!
+    $unit: Unit!
+    $customer: ID!
+    $status: Status!
+) {
+    createParcel(
+        data: {
+            name: $name
+            origin: $origin
+            weight: $weight
+            unit: $unit
+            customer: $customer
+            status: $status
+        }
+    ) {
+        id
+        name
+        origin
+        weight
+        unit
+        status
+        approval
+    }
+}
+
+mutation updateParcel(
+    $id: ID!
+    $name: String!
+    $origin: String!
+    $weight: Float!
+    $unit: Unit
+    $customer: ID!
+    $status: Status
+) {
+    updateParcel(
+        id: $id
+        data: {
+            name: $name
+            origin: $origin
+            weight: $weight
+            unit: $unit
+            customer: $customer
+            status: $status
+        }
+    ) {
+        id
+        name
+        origin
+        weight
+        unit
+        status
+        approval
+    }
+}
+
+mutation deleteParcel($id: ID!) {
+    deleteParcel(id: $id) {
+        id
+        name
+        origin
+        weight
+        unit
+        status
+        approval
+    }
+}
+
+mutation approveShipment($id: ID!) {
+    approveShipment(id: $id) {
+        id
+        name
+        origin
+        weight
+        unit
+        status
+        approval
+    }
+}

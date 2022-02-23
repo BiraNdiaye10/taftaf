@@ -1,0 +1,30 @@
+query orders {
+    orders {
+        id
+        name
+        link
+        description
+        createdAt
+        customer {
+            id
+            customerId
+            firstName
+            lastName
+        }
+    }
+}
+
+query order($id: ID!) {
+    order(id: $id) {
+        id
+        name
+        link
+        description
+        createdAt
+        customer {
+            id
+            firstName
+            lastName
+        }
+    }
+}

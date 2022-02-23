@@ -1,0 +1,33 @@
+query parcels {
+    parcels {
+        id
+        name
+        origin
+        weight
+        unit
+        status
+        approval
+    }
+}
+
+query parcel($id: ID!) {
+    parcel(id: $id) {
+        id
+        name
+        id
+        name
+        origin
+        weight
+        unit
+        status
+        approval
+        createdAt
+        updatedAt
+        customer {
+            id
+            firstName
+            lastName
+            customerId
+        }
+    }
+}

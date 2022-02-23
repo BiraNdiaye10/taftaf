@@ -1,0 +1,9 @@
+query address {
+    address {
+        id
+        country
+        city
+        postalCode
+        street
+    }
+}

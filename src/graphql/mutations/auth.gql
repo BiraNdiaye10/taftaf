@@ -1,0 +1,72 @@
+mutation createAccount(
+    $locale: Locale!
+    $firstName: String!
+    $lastName: String!
+    $email: String!
+    $password: String!
+    $phoneNumber1: String!
+    $phoneNumber2: String
+    $profession: String
+    $street: String!
+    $postalCode: String
+    $city: String!
+    $country: String!
+) {
+    createAccount(
+        locale: $locale
+        data: {
+            firstName: $firstName
+            lastName: $lastName
+            email: $email
+            password: $password
+            phoneNumber1: $phoneNumber1
+            phoneNumber2: $phoneNumber2
+            profession: $profession
+            street: $street
+            postalCode: $postalCode
+            city: $city
+            country: $country
+        }
+    ) {
+        firstName
+        lastName
+        email
+        customerId
+        street
+        city
+        country
+        postalCode
+    }
+}
+
+mutation login($email: String!, $password: String!) {
+    login(data: { email: $email, password: $password }) {
+        message
+    }
+}
+
+mutation forgotPassword($locale: Locale!, $email: String!) {
+    forgotPassword(locale: $locale, data: { email: $email }) {
+        message
+    }
+}
+
+mutation resetPassword($id: ID!, $token: String!, $password: String!, $confirmPassword: String!) {
+    resetPassword(
+        data: { id: $id, token: $token, password: $password, confirmPassword: $confirmPassword }
+    ) {
+        message
+    }
+}
+
+mutation validateAccount($token: String!) {
+    validateAccount(token: $token) {
+        message
+    }
+}
+
+mutation logout {
+    logout {
+        message
+    }
+}

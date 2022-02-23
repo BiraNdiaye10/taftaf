@@ -1,0 +1,127 @@
+mutation createUser(
+    $locale: Locale!
+    $firstName: String!
+    $lastName: String!
+    $email: String!
+    $password: String!
+    $phoneNumber1: String!
+    $phoneNumber2: String
+    $profession: String
+    $street: String!
+    $postalCode: String
+    $city: String!
+    $country: String!
+    $role: Role!
+) {
+    createUser(
+        locale: $locale
+        data: {
+            firstName: $firstName
+            lastName: $lastName
+            email: $email
+            password: $password
+            phoneNumber1: $phoneNumber1
+            phoneNumber2: $phoneNumber2
+            profession: $profession
+            street: $street
+            postalCode: $postalCode
+            city: $city
+            country: $country
+            role: $role
+        }
+    ) {
+        id
+        firstName
+        lastName
+        email
+        customerId
+        role
+    }
+}
+
+mutation updateUser(
+    $id: ID!
+    $firstName: String!
+    $lastName: String!
+    $email: String!
+    $phoneNumber1: String!
+    $phoneNumber2: String
+    $profession: String
+    $street: String!
+    $postalCode: String
+    $city: String!
+    $country: String!
+    $role: Role!
+) {
+    updateUser(
+        id: $id
+        data: {
+            firstName: $firstName
+            lastName: $lastName
+            email: $email
+            phoneNumber1: $phoneNumber1
+            phoneNumber2: $phoneNumber2
+            profession: $profession
+            street: $street
+            postalCode: $postalCode
+            city: $city
+            country: $country
+            role: $role
+        }
+    ) {
+        id
+        firstName
+        lastName
+        email
+        customerId
+        role
+    }
+}
+
+mutation deleteUser($id: ID!) {
+    deleteUser(id: $id) {
+        id
+        firstName
+        lastName
+        email
+        role
+    }
+}
+
+mutation createOrderForCustomer(
+    $customer: ID!
+    $name: String!
+    $link: String
+    $description: String
+) {
+    createOrderForCustomer(
+        customer: $customer
+        data: { name: $name, link: $link, description: $description }
+    ) {
+        id
+        name
+        link
+        description
+        createdAt
+    }
+}
+
+mutation updateOrderForCustomer(
+    $id: ID!
+    $customer: ID!
+    $name: String!
+    $link: String
+    $description: String
+) {
+    updateOrderForCustomer(
+        id: $id
+        customer: $customer
+        data: { name: $name, link: $link, description: $description }
+    ) {
+        id
+        name
+        link
+        description
+        createdAt
+    }
+}

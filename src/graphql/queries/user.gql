@@ -1,0 +1,53 @@
+query users {
+    users {
+        id
+        firstName
+        lastName
+        email
+        customerId
+        role
+    }
+}
+
+query user($id: ID!) {
+    user(id: $id) {
+        id
+        firstName
+        lastName
+        phoneNumber1
+        phoneNumber2
+        profession
+        email
+        customerId
+        role
+        shippingAddress {
+            street
+            city
+            country
+            postalCode
+        }
+        onlineAddress {
+            street
+            city
+            country
+            postalCode
+        }
+
+        parcels {
+            id
+            name
+            origin
+            weight
+            unit
+            status
+            approval
+        }
+
+        orders {
+            id
+            name
+            link
+            description
+        }
+    }
+}

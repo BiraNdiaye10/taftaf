@@ -1,0 +1,28 @@
+query me {
+    me {
+        id
+        firstName
+        lastName
+        role
+
+        parcels {
+            id
+            name
+            origin
+            weight
+            unit
+            status
+            approval
+            createdAt
+            updatedAt
+        }
+
+        orders {
+            id
+            name
+            link
+            description
+            createdAt
+        }
+    }
+}

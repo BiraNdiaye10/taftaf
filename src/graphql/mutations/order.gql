@@ -1,0 +1,28 @@
+mutation createOrder($name: String!, $link: String, $description: String) {
+    createOrder(data: { name: $name, link: $link, description: $description }) {
+        id
+        name
+        link
+        description
+        createdAt
+    }
+}
+
+mutation updateOrder($id: ID!, $name: String!, $link: String, $description: String) {
+    updateOrder(id: $id, data: { name: $name, link: $link, description: $description }) {
+        id
+        name
+        link
+        description
+        createdAt
+    }
+}
+
+mutation deleteOrder($id: ID!) {
+    deleteOrder(id: $id) {
+        id
+        name
+        link
+        description
+    }
+}
